@@ -22,18 +22,19 @@
 getAnova <- function(beta, formula, media.y) {
   
   
-  return("OK")
-  
   #Data transformations
-  # beta.reg.aux <- as.numeric(unlist(strsplit(beta, split="x")))
-  # beta.reg <- data.matrix(beta.reg.aux)
-  # mean.y <- as.numeric(media.y)
-  # 
-  # bindxy <- getVarbyFormula(formula=formula)
-  # bind.x <- data.matrix(bindxy$x)
-  # bind.y <- data.matrix(bindxy$y)
-  # 
-  # y.hat <- fittedDS(beta=beta.reg, x=bind.x)
+  beta.reg.aux <- as.numeric(unlist(strsplit(beta, split="x")))
+  beta.reg <- data.matrix(beta.reg.aux)
+  mean.y <- as.numeric(media.y)
+
+  bindxy <- getVarbyFormula(formula=formula)
+  bind.x <- data.matrix(bindxy$x)
+  bind.y <- data.matrix(bindxy$y)
+
+  y.hat <- fittedDS(beta=beta.reg, x=bind.x)
+  
+  return(y.hat)
+  
   # 
   # #prediction error
   # residuals <- bind.y - y.hat
