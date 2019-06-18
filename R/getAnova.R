@@ -31,7 +31,7 @@ getAnova <- function(beta, formula, media.y) {
   bind.x <- data.matrix(bindxy$x)
   bind.y <- data.matrix(bindxy$y)
 
-  y.hat <- fittedDS(beta=beta.reg, x=bind.x)
+  y.hat <- bind.x %*% beta.reg
   
   return(y.hat)
   
