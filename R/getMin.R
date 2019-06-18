@@ -1,0 +1,27 @@
+##'
+#' @title Minimum
+#' @description Computes the minimum value in the sample according to a study variable.
+#' @details Return the minimum of all the values present in their arguments, as integer if all are logical or integer,
+#' as double if all are numeric, and character otherwise.
+#'
+#' The minimum of a numeric empty set is +Inf which ensures transitivity.
+#' For numeric x ds.min(x) == +Inf whenever ds.length(x) == 0 (after removing missing values if requested).
+#'
+#' By definition the min of a numeric vector containing an NaN is NaN, except that the min of any vector containing
+#' an NA is NA even if it also contains an NaN. Note that ds.min(NA, Inf) == NA even though the minimum would be Inf whatever
+#' the missing value actually is.
+#'
+#' Character versions are sorted lexicographically. The min of an empty character vector is defined to be character NA.
+#' @param x is a study variable.
+#' @return The minimum value inside the vector.
+#' @author Paula R. Costa e Silva
+#' @section Dependencies:
+#' \code{\link{getVarByName}}
+#' @export
+#'
+
+getMin <- function(x) {
+  bind.x <- getVarByName(x)
+  min <- min(bind.x)
+  return(min)
+}
