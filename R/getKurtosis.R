@@ -20,10 +20,7 @@
 
 getKurtosis <- function(x, mean) {
   mean <- as.numeric(unlist(strsplit(mean, split = "x")))
-
-  if (is.null(datasources))
-    bind.x <- getVarByName(x)
-
+  bind.x <- getVarByName(x)
   m4 <- sum((bind.x - mean)^4)
   m2 <- sum((bind.x - mean)^2)
 
