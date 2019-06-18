@@ -34,7 +34,6 @@ AggregateMethods: matrixProductDS,
     getGm,
     getSkewness,
     getKurtosis,
-    getWilcoxTest,
     getLevels,
     getAnova
 Options: datashield.privacyLevel=5
@@ -62,7 +61,6 @@ Collate:
     'isValidDS.R'
     'matrixMethod.R'
     'setFilterDS.R'
-    'getWilcoxTest.R'
     'getLevels.R'
     'getCondCDF.R'
     'getCondSamplesCounting.R'
